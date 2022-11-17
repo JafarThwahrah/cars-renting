@@ -1,0 +1,31 @@
+
+
+.footer{
+    background-color: rgb(218, 218, 218);
+    color: grey;
+    font-weight: 500;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+    color: grey;
+    font-weight: 500;
+    flex-wrap: wrap;
+    
+}
+ul{
+    list-style: none;
+    padding: 0;
+
+}
+
+.icons{
+    margin-right:8px;
+}
+
+p{
+    text-align: center;
+}

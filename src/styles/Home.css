@@ -1,0 +1,12 @@
+.home{
+    height: 20rem;
+}
+
+.imageList-container{
+    display: flex;
+    justify-content: center;
+}
+
+.HeaderImg{
+    text-align: center;
+}
