@@ -30,7 +30,7 @@ function Footer() {
         </div>
         
       </footer>
-      <p>&copy; 2022 CarsJo.team</p>
+      <p className="copywrite">&copy; 2022 CarsJo.team</p>
 
 
     </div>

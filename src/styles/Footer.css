@@ -5,7 +5,6 @@
     color: grey;
     font-weight: 500;
     flex-wrap: wrap;
-    padding-bottom: 1rem;
 
 }
 footer{
@@ -28,4 +27,5 @@ ul{
 
 p{
     text-align: center;
+    margin-bottom: 0;
 }

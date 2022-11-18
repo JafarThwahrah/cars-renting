@@ -1,4 +1,8 @@
-.nav-Menu{
-    display: flex;
-    flex-direction: row-reverse;
+.navBarMain{
+    /* position: sticky; */
+    top: 0;
 }
+
+
+
+
