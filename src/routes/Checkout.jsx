@@ -66,14 +66,14 @@ function Checkout() {
   }, []);
 
   const oneCar = cars?.filter((ele) => {
-    console.log(ele.id == params.name);
-
     return ele.id == params.name;
   });
 
   function handleClickCheckout(oneCar) {
-    console.log(oneCar);
     localStorage.setItem("Model", JSON.stringify(oneCar[0].model));
+    localStorage.setItem("Year", JSON.stringify(oneCar[0].year));
+    localStorage.setItem("Make", JSON.stringify(oneCar[0].make));
+
     localStorage.setItem("Price", JSON.stringify(oneCar[0].price + 5));
     navigate("/ourcars/ordered");
 

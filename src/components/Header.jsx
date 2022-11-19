@@ -16,6 +16,8 @@ import { useState } from "react";
 import { googleLogout } from "@react-oauth/google";
 import Divider from "@mui/material/Divider";
 import logo from "../carszarqa.png";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const pages = ["Login", "Contact", "About us", "Our cars"];
 
@@ -63,6 +65,13 @@ function Header() {
     setLoginData(null);
     googleLogout();
   };
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!loginData) {
+      navigate("/");
+    }
+  }, [loginData]);
+
   return (
     <AppBar className="navBarMain">
       <Container maxWidth="xl">

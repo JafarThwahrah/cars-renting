@@ -16,6 +16,9 @@ import { useState } from "react";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleLogin } from "@react-oauth/google";
 // import { useGoogleOneTapLogin } from '@react-oauth/google';
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 import { googleLogout } from "@react-oauth/google";
 import "../styles/Login.css";
 
@@ -37,6 +40,7 @@ export default function SignIn() {
       ? JSON.parse(localStorage.getItem("loginData"))
       : null
   );
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -63,6 +67,12 @@ export default function SignIn() {
     setLoginData(null);
     googleLogout();
   };
+
+  useEffect(() => {
+    if (loginData) {
+      navigate("/profile");
+    }
+  }, [loginData]);
 
   return (
     <ThemeProvider theme={theme}>

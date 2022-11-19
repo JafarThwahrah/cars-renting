@@ -55,10 +55,12 @@ function Contact() {
     <>
       <div className="heroIMGContact">
         <div>
-          <h1>Contact Us</h1>{" "}
+          <h1>Contact Us</h1>
         </div>
       </div>
-      <h1 className="heading">Contact us</h1>
+      <h1 style={{ color: "#1976d2" }} className="heading">
+        Get in Touch
+      </h1>
       <Box className="container">
         <div className="contactItem">
           <LocationOnIcon className="icon" />

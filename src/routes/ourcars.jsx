@@ -236,11 +236,13 @@ export default function Ourcars() {
 
   return (
     <>
-      <h1 className="carHeading1">Find Your Favorite Car</h1>
+      <h1 style={{ color: "#1976d2" }} className="carHeading1">
+        Find Your Favorite Car
+      </h1>
 
       <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-          This is a success message!
+          Thanks for using our Website!
         </Alert>
       </Snackbar>
 
@@ -298,7 +300,7 @@ export default function Ourcars() {
             setSelectedModel(null);
           }}
           variant="contained">
-          Show All
+          Reset Filter
         </Button>
       </div>
       <div className="cardsContainer">

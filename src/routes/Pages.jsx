@@ -7,6 +7,7 @@ import Login from "./Login";
 import Ourcars from "./ourcars";
 import About from "./About";
 import Checkout from "./Checkout";
+import Profile from "./Profile";
 
 function Pages() {
   return (
@@ -19,6 +20,7 @@ function Pages() {
         <Route path="/about" element={<About />} />
         <Route path="/ourcars/:sucess" element={<Ourcars />} />
         <Route path="/checkout/:name" element={<Checkout />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>
   );

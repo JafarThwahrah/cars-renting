@@ -1,0 +1,49 @@
+.allcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem;
+    margin-top: 5rem;
+}
+
+.userImgAndInfo{
+    display: flex;
+     justify-content: space-around;
+     margin: 2rem;
+}
+
+.imgSection{
+
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.btnsContainer{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+.btn{
+    margin: 1rem;
+}
+.Paper{
+    margin: 1rem;
+    /* padding: 1rem; */
+}
+
+.img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+
+}
+
+.hdItem{
+    margin: 1rem;
+}
+

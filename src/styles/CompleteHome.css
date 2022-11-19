@@ -1,0 +1,49 @@
+.Offercontainer{
+    display: flex;
+    justify-content: center;
+    background: url('https://images7.alphacoders.com/117/1175441.jpg');
+    height: 450px;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    align-items: center;
+    color:  #1976d2 ;
+
+
+}
+
+.discount{
+    color: gold;
+}
+
+.btnOffer{
+    color: #1976d2;
+    background-color: transparent;
+    border-color: #1976d2;
+    padding: .7rem;
+}
+
+.btnOffer:hover {
+    background-color: #1976d2;
+    color: white;
+    cursor: pointer;
+}
+
+.contactAdsHome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.conactBg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: transparent !important;
+    background: url('https://vizesizgeziyorum.com/wp-content/uploads/2015/05/iletisim.jpg');
+    height: 410px;
+    width: 730px;
+}
