@@ -1,0 +1,64 @@
+.ContainerCheckout{
+    
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10rem;
+    padding: 3rem;
+}
+.HeaderSammary{
+    text-align: center;
+    color: white;
+    background-color: #1976d2;
+    padding: 1rem;
+    margin: 0;
+}
+
+.sammaryPriceTable{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 7rem 7rem 7rem;
+    border-radius: 5px;
+    align-items: center;
+
+}
+
+.rentPrice{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.deliveryFees{
+    display: flex;
+    justify-content: space-around;
+}
+
+.totalPrice{
+    display: flex;
+    justify-content: space-around;
+}
+
+.inputField{
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #1976d2;
+}
+
+.inputField:focus{
+    border-color: #1976d2;
+    
+
+}
+.btnCheckout{
+    margin-left: 10rem;
+}
+
+.HeaderCheckout{
+    text-align: center;
+    margin-top: 8rem;
+    font-weight: 700;
+    font-style: oblique;
+}

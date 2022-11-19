@@ -10,13 +10,12 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { NavLink } from "react-router-dom";
 import "../styles/Header.css";
 import { useState } from "react";
 import { googleLogout } from "@react-oauth/google";
-import Divider from '@mui/material/Divider';
-
+import Divider from "@mui/material/Divider";
+import logo from "../carszarqa.png";
 
 const pages = ["Login", "Contact", "About us", "Our cars"];
 
@@ -68,23 +67,18 @@ function Header() {
     <AppBar className="navBarMain">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}>
-            LOGO
-          </Typography>
+          <img
+            className="logoImg"
+            style={{
+              height: "50px",
+              width: "50px",
+              borderRadius: "50%",
+              margin: "8px",
+            }}
+            src={logo}
+            alt=""
+          />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -120,7 +114,7 @@ function Header() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -137,7 +131,7 @@ function Header() {
               textDecoration: "none",
             }}>
             LOGO
-          </Typography>
+          </Typography> */}
           <Box
             className="navLinks-container"
             sx={{
@@ -161,7 +155,7 @@ function Header() {
               ABOUT US
             </NavLink>
             <NavLink
-              to="/ourcars"
+              to={`/ourcars/${"s"}`}
               style={({ isActive }) =>
                 isActive ? activeStyle : notActiveStyle
               }
@@ -205,7 +199,6 @@ function Header() {
                 }}
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}>
-                  
                 <NavLink
                   style={{
                     color: "black",
@@ -244,5 +237,3 @@ function Header() {
   );
 }
 export default Header;
-
-

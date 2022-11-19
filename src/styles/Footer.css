@@ -1,24 +1,21 @@
 
 
 .footer{
-    background-color: rgb(218, 218, 218);
-    color: grey;
+    background-color: #1976d2;
+    color: white;
     font-weight: 500;
     flex-wrap: wrap;
-
 }
 footer{
     display: flex;
     justify-content: space-around;
-    color: grey;
+    color: white;;
     font-weight: 500;
     flex-wrap: wrap;
-    
 }
 ul{
     list-style: none;
     padding: 0;
-
 }
 
 .icons{

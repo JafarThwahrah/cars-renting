@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/contact.css";
+import { useState } from "react";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -8,10 +9,55 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import { GOOGLE_API_KEY } from "../config";
 
 function Contact() {
+  const [latituede, setLatituede] = useState(null);
+  const [longitude, setLongitude] = useState(null);
+  const [userAddress, setUserAddress] = useState(null);
+
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        getCoordinates,
+        handleLocationError
+      );
+    } else {
+      alert(" geolocation is not available");
+    }
+  };
+
+  function getCoordinates(position) {
+    setLatituede(position.coords.latitude);
+    setLongitude(position.coords.longitude);
+  }
+  getLocation();
+  console.log(GOOGLE_API_KEY);
+
+  function handleLocationError(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        alert("User denied the request for Geolocation.");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        alert("Location information is unavailable.");
+        break;
+      case error.TIMEOUT:
+        alert("The request to get user location timed out.");
+        break;
+      case error.UNKNOWN_ERROR:
+        alert("An unknown error occurred.");
+        break;
+    }
+  }
+
   return (
     <>
+      <div className="heroIMGContact">
+        <div>
+          <h1>Contact Us</h1>{" "}
+        </div>
+      </div>
       <h1 className="heading">Contact us</h1>
       <Box className="container">
         <div className="contactItem">
@@ -81,7 +127,20 @@ function Contact() {
             </Button>
           </Box>
         </Paper>
+
+        {/* <img
+          src={`https://maps.googleapis.com/maps/api/staticmap?center=${latituede},${longitude}&zoom=12&size=400x400&key=${GOOGLE_API_KEY}`}
+          alt=""
+        /> */}
       </Box>
+      <h3 className="ContactHeading">Find Our Location</h3>
+      <div className="mapContainer">
+        <iframe
+          className="map"
+          src="https://www.google.com/maps/d/embed?mid=1WIgZmfjfrZE-mgFqHRla1FbpVa_TQSQ&ehbc=2E312F"
+          width="640"
+          height="480"></iframe>
+      </div>
     </>
   );
 }

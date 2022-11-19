@@ -1,0 +1,36 @@
+.heroIMGAbout{
+    height: 100vh;
+    /* margin: 10rem; */
+    width: 1473px;
+    margin-top: 3rem;
+    background-image: url('https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?cs=srgb&dl=pexels-mike-b-120049.jpg&fm=jpg');
+    background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+.articleAboutContainer{
+
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem;
+}
+
+.aboutSideimg{
+     width: 450px;
+     height: 450px;
+}
+
+article{
+    width: 450px;
+     height: 450px;
+}
+
+.flexedItem{
+    margin: 3rem;
+}
+

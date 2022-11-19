@@ -74,3 +74,12 @@
 
     border-radius: 7px;
   }
+
+  .carHeadingModel{
+    font-weight: bolder;
+    text-align: center;
+    font-style: oblique;
+    font-weight: bolder !important;
+    font-size: larger !important    ;
+
+  }

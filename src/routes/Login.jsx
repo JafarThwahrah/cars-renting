@@ -17,7 +17,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleLogin } from "@react-oauth/google";
 // import { useGoogleOneTapLogin } from '@react-oauth/google';
 import { googleLogout } from "@react-oauth/google";
-import '../styles/Login.css';
+import "../styles/Login.css";
 
 function Copyright(props) {
   return (
@@ -52,7 +52,6 @@ export default function SignIn() {
   const handleLogin = (googleData) => {
     localStorage.setItem("loginData", JSON.stringify(googleData));
     setLoginData(googleData);
-
   };
 
   const handleFailure = (result) => {
@@ -125,19 +124,18 @@ export default function SignIn() {
                 Sign In
               </Button>
               <div className="googlebtncontainer">
-              <GoogleOAuthProvider
-                style={{ margin: "1rem", width: "30rem" }}
-                clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-                buttonText="Login with Google"
-                cookiePolicy={"strict-origin-when-cross-origin"}>
-                <GoogleLogin
-                className='googleBtn'
-                  onSuccess={handleLogin}
-                  onError={handleFailure}
-                  useOneTap
-                />
-                
-              </GoogleOAuthProvider>
+                <GoogleOAuthProvider
+                  style={{ margin: "1rem", width: "30rem" }}
+                  clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                  buttonText="Login with Google"
+                  cookiePolicy={"strict-origin-when-cross-origin"}>
+                  <GoogleLogin
+                    className="googleBtn"
+                    onSuccess={handleLogin}
+                    onError={handleFailure}
+                    useOneTap
+                  />
+                </GoogleOAuthProvider>
               </div>
 
               <Grid container>
