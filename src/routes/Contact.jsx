@@ -10,12 +10,25 @@ import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import { GOOGLE_API_KEY } from "../config";
+import addNotification from "react-push-notification";
+import image from "../FaceBook.png";
 
 function Contact() {
   const [latituede, setLatituede] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [userAddress, setUserAddress] = useState(null);
 
+  const buttonClick = () => {
+    addNotification({
+      title: "Thanks for contacting us",
+      subtitle: "Thanks for using our channels",
+      message:
+        "We will response to your inquiry within 24 hours, Kindly keep your phone opened and active",
+      theme: "light",
+      backgroundTop: "#1976d2",
+      colorTop: "white",
+    });
+  };
   const getLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -31,6 +44,7 @@ function Contact() {
     setLatituede(position.coords.latitude);
     setLongitude(position.coords.longitude);
   }
+
   getLocation();
   console.log(GOOGLE_API_KEY);
   console.log(longitude);
@@ -126,7 +140,10 @@ function Contact() {
               multiline
               rows={4}
             />
-            <Button className="button" variant="contained">
+            <Button
+              onClick={buttonClick}
+              className="button"
+              variant="contained">
               Send
             </Button>
           </Box>
@@ -139,18 +156,18 @@ function Contact() {
       </Box>
       <h3 className="ContactHeading">Find Our Location</h3>
       <div className="mapContainer">
-        <iframe
+        {/* <iframe
           className="map"
           src={`https://www.google.com/maps/embed/v1/view
           ?key=${GOOGLE_API_KEY}
           &center=${latituede},${longitude}
           &zoom=18`}
-          // src={`https://www.google.com/maps/search/?api=${GOOGLE_API_KEY}&query=${latituede},${longitude}`}
           width="640"
-          height="480"></iframe>
+          height="480"></iframe> */}
       </div>
     </>
   );
 }
+// src={`https://www.google.com/maps/search/?api=${GOOGLE_API_KEY}&query=${latituede},${longitude}`}
 
 export default Contact;
