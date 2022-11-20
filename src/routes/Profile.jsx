@@ -121,13 +121,29 @@ function Profile() {
             <Table sx={{ minWidth: 850 }} aria-label="customized table">
               <TableHead>
                 <TableRow>
-                  <StyledTableCell>#</StyledTableCell>
-                  <StyledTableCell align="right">Car Model</StyledTableCell>
-                  <StyledTableCell align="right">Make</StyledTableCell>
-                  <StyledTableCell align="right">
+                  <StyledTableCell style={{ backgroundColor: "#1976d2" }}>
+                    #
+                  </StyledTableCell>
+                  <StyledTableCell
+                    style={{ backgroundColor: "#1976d2" }}
+                    align="right">
+                    Car Model
+                  </StyledTableCell>
+                  <StyledTableCell
+                    style={{ backgroundColor: "#1976d2" }}
+                    align="right">
+                    Make
+                  </StyledTableCell>
+                  <StyledTableCell
+                    style={{ backgroundColor: "#1976d2" }}
+                    align="right">
                     Year of release
                   </StyledTableCell>
-                  <StyledTableCell align="right">Price</StyledTableCell>
+                  <StyledTableCell
+                    style={{ backgroundColor: "#1976d2" }}
+                    align="right">
+                    Price
+                  </StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
