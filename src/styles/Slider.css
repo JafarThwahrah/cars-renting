@@ -1,0 +1,58 @@
+.slider1{
+    background: url('https://wallpapersmug.com/download/2560x1440/aad070/porsche-911-turbo-sports-car.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    display: flex;
+    justify-content: left;
+    color: white;   
+    align-items: center;
+}
+
+.slider2 {
+    background: url('https://th.bing.com/th/id/R.c58bc642812e4c362688e5d95ffc9bbe?rik=I5l5aTH0SRTxBA&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f0%2fe%2f3%2f359809.jpg&ehk=2czX2qHaJ04feRzzM8MDzYmCPZUjKLgo3dk4%2f9XKW6E%3d&risl=&pid=ImgRaw&r=0');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    display: flex;
+    justify-content: left;
+    color: white;   
+    align-items: center;
+}
+
+.slider3 {
+    background: url('https://www.hdnicewallpapers.com/Walls/Big/BMW/New_BMW_M3_White_Car_Free_Wallpapers_Download.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    display: flex;
+    justify-content: left;
+    color: white;   
+    align-items: center;
+}
+
+.welcomeTextContainer{
+    padding: 5rem;
+    background-color: black;
+    /* filter: brightness(0.8); */
+    color: white;
+    opacity: 70%;
+    border-radius: 15px;
+    margin: 5rem;
+}
+
+.textmain{
+    z-index: 5;
+    color: white !important;
+}
+
+.websiteName{
+    color: #1976d2;
+    font-style: oblique;
+}

@@ -19,7 +19,7 @@ function CompleteHome() {
           Vehicles
           <div>
             <button onClick={handleClickOffer} className="btnOffer">
-              <span> Find CAR NOW!</span>
+              Find CAR NOW!
             </button>
           </div>
         </h1>
@@ -31,7 +31,7 @@ function CompleteHome() {
       <div className="contactAdsHome">
         <div className="conactBg"></div>
         <button onClick={handleContactUsBtn} className="btnOffer">
-          Contact us Now!
+          Contact us.
         </button>
       </div>
     </div>

@@ -54,6 +54,7 @@ function Profile() {
     localStorage.removeItem("loginData");
     setLoginData(null);
     googleLogout();
+    navigate("/");
   };
 
   const navigate = useNavigate();
