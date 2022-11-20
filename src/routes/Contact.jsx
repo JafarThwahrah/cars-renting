@@ -33,6 +33,8 @@ function Contact() {
   }
   getLocation();
   console.log(GOOGLE_API_KEY);
+  console.log(longitude);
+  console.log(latituede);
 
   function handleLocationError(error) {
     switch (error.code) {
@@ -139,7 +141,11 @@ function Contact() {
       <div className="mapContainer">
         <iframe
           className="map"
-          src="https://www.google.com/maps/d/embed?mid=1WIgZmfjfrZE-mgFqHRla1FbpVa_TQSQ&ehbc=2E312F"
+          src={`https://www.google.com/maps/embed/v1/view
+          ?key=${GOOGLE_API_KEY}
+          &center=${latituede},${longitude}
+          &zoom=18`}
+          // src={`https://www.google.com/maps/search/?api=${GOOGLE_API_KEY}&query=${latituede},${longitude}`}
           width="640"
           height="480"></iframe>
       </div>

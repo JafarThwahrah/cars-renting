@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -31,6 +32,7 @@ export default function Ourcars() {
   const [selectedModel, setSelectedModel] = useState(null);
   const [filtered, setFiltered] = useState(null);
   const [open, setOpen] = React.useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -72,6 +74,9 @@ export default function Ourcars() {
     axios
       .request(options)
       .then(function (response) {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 2000);
         const carsData = response.data;
         for (let i = 0; i < carsData.length; i++) {
           carsData[i].image = imagesArr[i];
@@ -236,88 +241,98 @@ export default function Ourcars() {
 
   return (
     <>
-      <h1 style={{ color: "#1976d2" }} className="carHeading1">
-        Find Your Favorite Car
-      </h1>
+      {isLoading && (
+        <div className="loadingCircle">
+          <CircularProgress color="primary" />
+        </div>
+      )}
+      {!isLoading && (
+        <>
+          <h1 style={{ color: "#1976d2" }} className="carHeading1">
+            Find Your Favorite Car
+          </h1>
+          <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%" }}>
+              Thanks for using our Website!
+            </Alert>
+          </Snackbar>
+          <div className="filterContainer">
+            <FormControl
+              sx={{ width: 300 }}
+              className="filter"
+              style={{ margin: "1rem" }}>
+              <InputLabel id="demo-simple-select-label2">Makes</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={selected}
+                label="Age"
+                onChange={(e) => setSelected(e.target.value)}>
+                {uniqueMakes.map((unique) => {
+                  return <MenuItem value={unique}>{unique}</MenuItem>;
+                })}
+              </Select>
+            </FormControl>
 
-      <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-          Thanks for using our Website!
-        </Alert>
-      </Snackbar>
+            <FormControl
+              sx={{ width: 300 }}
+              className="filter"
+              style={{ margin: "1rem" }}>
+              <InputLabel id="demo-simple-select-label">Model</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={selected}
+                label="Model"
+                onChange={(e) => setSelectedModel(e.target.value)}>
+                {uniqueModels.map((unique) => {
+                  return <MenuItem value={unique}>{unique}</MenuItem>;
+                })}
+              </Select>
+            </FormControl>
 
-      <div className="filterContainer">
-        <FormControl
-          sx={{ width: 300 }}
-          className="filter"
-          style={{ margin: "1rem" }}>
-          <InputLabel id="demo-simple-select-label2">Makes</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={selected}
-            label="Age"
-            onChange={(e) => setSelected(e.target.value)}>
-            {uniqueMakes.map((unique) => {
-              return <MenuItem value={unique}>{unique}</MenuItem>;
-            })}
-          </Select>
-        </FormControl>
+            <TextField
+              style={{ margin: "1rem" }}
+              className="filter"
+              id="outlined-basic"
+              label="Search..."
+              variant="outlined"
+              onChange={(e) => setSearched(e.target.value)}
+            />
 
-        <FormControl
-          sx={{ width: 300 }}
-          className="filter"
-          style={{ margin: "1rem" }}>
-          <InputLabel id="demo-simple-select-label">Model</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={selected}
-            label="Model"
-            onChange={(e) => setSelectedModel(e.target.value)}>
-            {uniqueModels.map((unique) => {
-              return <MenuItem value={unique}>{unique}</MenuItem>;
-            })}
-          </Select>
-        </FormControl>
+            <Button
+              className="showAllBtn"
+              style={{ height: "55px", margin: "1rem" }}
+              onClick={(e) => {
+                setFiltered(cars);
+                setSelected(null);
+                setSearched(null);
+                setSelectedModel(null);
+              }}
+              variant="contained">
+              Reset Filter
+            </Button>
+          </div>
+          <div className="cardsContainer">
+            {displayUsers}
 
-        <TextField
-          style={{ margin: "1rem" }}
-          className="filter"
-          id="outlined-basic"
-          label="Search..."
-          variant="outlined"
-          onChange={(e) => setSearched(e.target.value)}
-        />
-
-        <Button
-          className="showAllBtn"
-          style={{ height: "55px", margin: "1rem" }}
-          onClick={(e) => {
-            setFiltered(cars);
-            setSelected(null);
-            setSearched(null);
-            setSelectedModel(null);
-          }}
-          variant="contained">
-          Reset Filter
-        </Button>
-      </div>
-      <div className="cardsContainer">
-        {displayUsers}
-
-        <ReactPaginate
-          previousLabel={"Previous"}
-          nextLabel={"Next"}
-          pageCount={pageCount}
-          onPageChange={changePage}
-          containerClassName={"paginationBttns"}
-          previousLinkClassName={"previousBttn"}
-          nextLinkClassName={"nextBttn"}
-          disabledClassName={"paginationDisabled"}
-          activeClassName={"paginationActive"}
-        />
-      </div>
+            <ReactPaginate
+              previousLabel={"Previous"}
+              nextLabel={"Next"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={"paginationBttns"}
+              previousLinkClassName={"previousBttn"}
+              nextLinkClassName={"nextBttn"}
+              disabledClassName={"paginationDisabled"}
+              activeClassName={"paginationActive"}
+            />
+          </div>
+        </>
+      )}
     </>
   );
 }

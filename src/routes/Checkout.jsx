@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function Checkout() {
   const [cars, setCars] = useState();
@@ -17,6 +18,7 @@ function Checkout() {
       ? JSON.parse(localStorage.getItem("loginData"))
       : null
   );
+  const [isLoading, setIsLoading] = useState(true);
 
   let params = useParams();
   const navigate = useNavigate();
@@ -53,6 +55,9 @@ function Checkout() {
     axios
       .request(options)
       .then(function (response) {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 2000);
         const carsData = response.data;
         for (let i = 0; i < carsData.length; i++) {
           carsData[i].image = imagesArr[i];
@@ -89,50 +94,61 @@ function Checkout() {
   //   console.log()
 
   return (
-    <div>
-      {oneCar?.map((ele) => {
-        return (
-          <>
-            <div>
-              <h2 className="HeaderCheckout">Checkout</h2>
-            </div>
-            <Box className="ContainerCheckout">
-              <div>
-                <PaymentForm />
-                <Button
-                  onClick={() => handleClickCheckout(oneCar)}
-                  style={{ margin: "1rem" }}
-                  type="submit"
-                  className="btnCheckout"
-                  variant="contained">
-                  Check Out
-                </Button>
-              </div>
-
-              <Paper style={{ height: "400px" }} elevation={3}>
-                <h3 className="HeaderSammary">Sammary</h3>
-                <h5 style={{ textAlign: "center" }}>Car Model:{ele.model}</h5>
-                <div className="sammaryPriceTable">
-                  <div className="rentPrice">
-                    <h5>Rent Price:</h5>
-                    <h5>{ele.price} JOD</h5>
-                  </div>
-                  <div className="deliveryFees">
-                    <h5>Delivery Fees:</h5>
-                    <h5>5 JOD</h5>
-                  </div>
-
-                  <div className="totalPrice">
-                    <h5>Total Price:</h5>
-                    <h5>{ele.price + 5} JOD</h5>
-                  </div>
+    <>
+      {isLoading && (
+        <div className="loadingCircle">
+          <CircularProgress color="primary" />
+        </div>
+      )}
+      {!isLoading && (
+        <div>
+          {oneCar?.map((ele) => {
+            return (
+              <>
+                <div>
+                  <h2 className="HeaderCheckout">Checkout</h2>
                 </div>
-              </Paper>
-            </Box>
-          </>
-        );
-      })}
-    </div>
+                <Box className="ContainerCheckout">
+                  <div>
+                    <PaymentForm />
+                    <Button
+                      onClick={() => handleClickCheckout(oneCar)}
+                      style={{ margin: "1rem" }}
+                      type="submit"
+                      className="btnCheckout"
+                      variant="contained">
+                      Check Out
+                    </Button>
+                  </div>
+
+                  <Paper style={{ height: "400px" }} elevation={3}>
+                    <h3 className="HeaderSammary">Sammary</h3>
+                    <h5 style={{ textAlign: "center" }}>
+                      Car Model:{ele.model}
+                    </h5>
+                    <div className="sammaryPriceTable">
+                      <div className="rentPrice">
+                        <h5>Rent Price:</h5>
+                        <h5>{ele.price} JOD</h5>
+                      </div>
+                      <div className="deliveryFees">
+                        <h5>Delivery Fees:</h5>
+                        <h5>5 JOD</h5>
+                      </div>
+
+                      <div className="totalPrice">
+                        <h5>Total Price:</h5>
+                        <h5>{ele.price + 5} JOD</h5>
+                      </div>
+                    </div>
+                  </Paper>
+                </Box>
+              </>
+            );
+          })}
+        </div>
+      )}
+    </>
   );
 }
 
