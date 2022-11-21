@@ -8,7 +8,9 @@ import { Notifications } from "react-push-notification";
 function App() {
   return (
     <div className="App">
-      <Notifications />
+      <div className="notification">
+        <Notifications />
+      </div>
       <BrowserRouter>
         <Header />
         <Pages />

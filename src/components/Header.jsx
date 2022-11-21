@@ -48,7 +48,7 @@ function Header() {
   let activeStyle = {
     textDecoration: "none",
     color: "white",
-    backgroundColor: "cyan",
+    backgroundColor: "gold",
     marginLeft: "1rem",
     padding: "1rem",
   };

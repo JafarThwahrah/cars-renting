@@ -17,13 +17,19 @@
 }
 
 .btnOffer{
-    color: #1976d2;
+    color: gold;
     background-color: transparent;
-    border-color: #1976d2;
+    border-color: gold;
     padding: .7rem;
 }
 
 .btnOffer:hover {
+    background-color: gold;
+    color: white;
+    cursor: pointer;
+}
+
+.btnContact:hover {
     background-color: #1976d2;
     color: white;
     cursor: pointer;
@@ -35,6 +41,13 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 3rem;
+}
+
+.btnContact{
+    color: #1976d2;
+    background-color: transparent;
+    border-color: #1976d2;
+    padding: .7rem;
 }
 
 .conactBg{

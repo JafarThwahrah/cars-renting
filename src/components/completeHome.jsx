@@ -30,7 +30,7 @@ function CompleteHome() {
       </h3>
       <div className="contactAdsHome">
         <div className="conactBg"></div>
-        <button onClick={handleContactUsBtn} className="btnOffer">
+        <button onClick={handleContactUsBtn} className="btnOffer btnContact">
           Contact us.
         </button>
       </div>
