@@ -5,6 +5,7 @@
     color: white;
     font-weight: 500;
     flex-wrap: wrap;
+    
 }
 footer{
     display: flex;
@@ -12,6 +13,8 @@ footer{
     color: white;;
     font-weight: 500;
     flex-wrap: wrap;
+    width: 100%;
+
 }
 ul{
     list-style: none;

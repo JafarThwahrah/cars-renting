@@ -155,16 +155,14 @@ function Contact() {
         /> */}
       </Box>
       <h3 className="ContactHeading">Find Our Location</h3>
-      <div className="mapContainer">
-        {/* <iframe
-          className="map"
-          src={`https://www.google.com/maps/embed/v1/view
+      <iframe
+        className="map"
+        src={`https://www.google.com/maps/embed/v1/view
           ?key=${GOOGLE_API_KEY}
           &center=${latituede},${longitude}
           &zoom=18`}
-          width="640"
-          height="480"></iframe> */}
-      </div>
+        width="640"
+        height="480"></iframe>
     </>
   );
 }
