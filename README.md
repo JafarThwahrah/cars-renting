@@ -6,7 +6,7 @@ This website provide car renting services You can sign up as a user and rent the
 This website is build using `React.js` besides `CSS3`, most of the featueres are installed from [mui.com](https://mui.com/)
 
 ### `Links`
-[WireFrame and Mockup](https://www.figma.com/file/Eceh3zstVHGR4czjHWKoel/cars-Renting?node-id=1%3A3&t=0vyB2w5Vafvqj4Ou-0)
+[WireFrame and Mockup](https://drive.google.com/file/d/14Zx7GDgm0qxuJIWRAXVQaRKRtJJOdZlr/view)
 
 
 [TrelloBoard](https://trello.com/b/WY3uo4Ln/cars)
