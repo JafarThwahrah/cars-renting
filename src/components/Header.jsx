@@ -15,7 +15,7 @@ import "../styles/Header.css";
 import { useState } from "react";
 import { googleLogout } from "@react-oauth/google";
 import Divider from "@mui/material/Divider";
-import logo from "../carszarqa.png";
+import logo from "../logo2.png";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -81,7 +81,6 @@ function Header() {
             style={{
               height: "50px",
               width: "50px",
-              borderRadius: "50%",
               margin: "8px",
             }}
             src={logo}
