@@ -87,9 +87,9 @@
     justify-content: center;
 }
 .map{
-    margin: 0;
+    margin-bottom: 2rem;
     padding: 0;
-    height: 25rem;
+    height: 30rem;
     display: block;
     width: 99.75%;
 }

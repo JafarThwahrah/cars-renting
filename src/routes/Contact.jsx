@@ -157,12 +157,15 @@ function Contact() {
       <h3 className="ContactHeading">Find Our Location</h3>
       <iframe
         className="map"
+        src="https://www.google.com/maps/d/embed?mid=1WIgZmfjfrZE-mgFqHRla1FbpVa_TQSQ&ehbc=2E312F"></iframe>
+      {/* <iframe
+        className="map"
         src={`https://www.google.com/maps/embed/v1/view
           ?key=${GOOGLE_API_KEY}
           &center=${latituede},${longitude}
           &zoom=18`}
         width="640"
-        height="480"></iframe>
+        height="480"></iframe> */}
     </>
   );
 }
