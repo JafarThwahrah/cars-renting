@@ -51,11 +51,19 @@ export default function SignIn() {
 
     localStorage.setItem("loginData", JSON.stringify(formData));
 
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+
     navigate("/profile");
   };
 
   const handleLogin = (googleData) => {
     localStorage.setItem("loginData", JSON.stringify(googleData));
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
     setLoginData(googleData);
   };
 
