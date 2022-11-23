@@ -59,7 +59,6 @@ export default function TitlebarImageList() {
       });
   }, []);
 
-  console.log(cars);
   return (
     <div style={{ marginTop: "6rem" }}>
       <h2 className="HeaderImg">Find our Most Requested Models</h2>

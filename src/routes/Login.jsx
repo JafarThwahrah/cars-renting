@@ -50,6 +50,7 @@ export default function SignIn() {
     let formData = email + password;
 
     localStorage.setItem("loginData", JSON.stringify(formData));
+
     navigate("/profile");
   };
 
